@@ -1,3 +1,4 @@
+
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
@@ -115,6 +116,73 @@
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
 }
+
+
+
+/* Headings - Properly scaled from largest to smallest */
+.heading-1 {
+  @apply text-4xl font-bold leading-10 
+         md:text-5xl md:leading-[3.5rem] 
+         lg:text-6xl lg:leading-[4rem];
+}
+
+.heading-2 {
+  @apply text-3xl font-bold leading-9 
+         md:text-4xl md:leading-10 
+         lg:text-5xl lg:leading-[3.5rem];
+}
+
+.heading-3 {
+  @apply text-2xl font-bold leading-8 
+         md:text-3xl md:leading-9 
+         lg:text-4xl lg:leading-10;
+}
+
+.heading-4 {
+  @apply text-xl font-bold leading-7 
+         md:text-2xl md:leading-8 
+         lg:text-3xl lg:leading-9;
+}
+
+/* Paragraphs - Proper text sizes */
+.paragraph-small {
+  @apply text-sm font-normal leading-5 
+         md:text-base md:leading-6 
+         lg:text-lg lg:leading-7;
+}
+
+.paragraph {
+  @apply text-base font-normal leading-6 
+         md:text-lg md:leading-7 
+         lg:text-xl lg:leading-8;
+}
+
+.paragraph-large {
+  @apply text-lg font-normal leading-7 
+         md:text-xl md:leading-8 
+         lg:text-2xl lg:leading-9;
+}
+
+/* Additional utility classes */
+.subtitle {
+  @apply text-lg font-medium leading-7 
+         md:text-xl md:leading-8 
+         lg:text-2xl lg:leading-9;
+}
+
+.caption {
+  @apply text-xs font-normal leading-4 
+         md:text-sm md:leading-5 
+         lg:text-base lg:leading-6;
+}
+
+.overline {
+  @apply text-xs font-semibold uppercase tracking-wider 
+         md:text-sm 
+         lg:text-base;
+}
+
+
 
 @layer base {
   * {

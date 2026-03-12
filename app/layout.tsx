@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "FinTrackerPro – Smart Daily Expense & Income Management System",
+  title: "DailyfinTracker – Smart Daily Expense & Income Management System",
   description: "Track your income, monitor spending, and manage your financial life with powerful insights and analytics.",
 };
 
