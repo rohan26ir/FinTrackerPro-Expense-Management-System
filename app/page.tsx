@@ -1,13 +1,14 @@
 import HomeHero from "./components/pages/HomeHero";
 import Testimonials from "./components/section/Testimonials";
 import TrustedBy from "./components/section/TrustedBy";
+import WhyPeopleChoose from "./components/section/WhyPeopleChoose";
 
 
 
 
 export default function Home() {
   return (
-    <div>
+    <div className="flex flex-col gap-20 mb-20">
       
       <div><HomeHero></HomeHero></div>
 
@@ -15,13 +16,13 @@ export default function Home() {
       
       <div><Testimonials></Testimonials></div>
       
-      <div></div>
+      <div><WhyPeopleChoose></WhyPeopleChoose></div>
       
-      <div></div>
+      {/* <div></div> */}
       
-      <div></div>
+      {/* <div></div> */}
 
-      <div></div>
+      {/* <div></div> */}
 
 
     </div>

@@ -4,13 +4,9 @@ import {
   Twitter,
   Linkedin,
   Mail,
-  Shield,
-  HelpCircle,
-  FileText,
-  MailIcon
 } from "lucide-react";
 
-import { Button } from "../ui/button";
+// import { Button } from "../ui/button";
 
 
 export default function Footer() {
@@ -24,12 +20,11 @@ export default function Footer() {
   ];
 
   const footerLinks = [
-    { name: "About Author", href: "/about" },
-    { name: "Guest Article", href: "/guest-article" },
-    { name: "Sitemap", href: "/sitemap" },
+    { name: "Home", href: "/" },
+    { name: "Features", href: "/features" },
+    { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
-    { name: "HTML Editor", href: "/html-editor" },
-    { name: "PreCode Parser", href: "/precode-parser" },
+    { name: "Support", href: "/support" },
     { name: "Privacy Policy", href: "/privacy" },
     { name: "Terms of Service", href: "/terms" },
   ];

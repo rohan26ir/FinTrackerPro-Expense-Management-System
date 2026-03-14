@@ -11,7 +11,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 // import required modules
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { Autoplay, Navigation } from 'swiper/modules';
 import Image from 'next/image';
 
 const Testimonials = () => {
@@ -69,12 +69,12 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-background">
+    <section className="bg-background">
       <div className="w-[95%] max-w-400 mx-auto ">
         {/* Header with title and custom navigation */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 gap-6">
           <div>
-            <h2 className="heading-2 text-foreground mt-2">
+            <h2 className="heading-2 text-foreground ">
               What Our Clients Say
             </h2>
             <p className="paragraph text-muted-foreground mt-2 max-w-2xl">
@@ -120,7 +120,7 @@ const Testimonials = () => {
           }}
           navigation={false}
           modules={[Autoplay, Navigation]}
-          className="pb-12!"
+          // className="pb-12!"
           breakpoints={{
             640: {
               slidesPerView: 2,
