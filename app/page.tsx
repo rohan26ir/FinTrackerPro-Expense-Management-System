@@ -1,4 +1,5 @@
 import HomeHero from "./components/pages/HomeHero";
+import Subscription from "./components/section/Subscription";
 import Testimonials from "./components/section/Testimonials";
 import TrustedBy from "./components/section/TrustedBy";
 import WhyChooseUS from "./components/section/WhyChooseUS";
@@ -19,9 +20,9 @@ export default function Home() {
       
       <div><WhyPeopleChoose></WhyPeopleChoose></div>
       
-      <div><WhyChooseUS></WhyChooseUS></div>
+      <div><Subscription></Subscription></div>
       
-      {/* <div></div> */}
+      <div><WhyChooseUS></WhyChooseUS></div>
 
       {/* <div></div> */}
 
