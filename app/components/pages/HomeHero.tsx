@@ -2,7 +2,7 @@
 
 import Lottie from 'lottie-react';
 import lottieImage from '@/public/lottie/money_investment.json';
-import { Button } from '@/components/ui/button';
+import { Button } from '../ui/button';
 
 // import Image from 'next/image';
 // import bgImage from '@/public/banner/money-transfer-global-currency.avif';
