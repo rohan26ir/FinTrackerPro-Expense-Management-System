@@ -35,7 +35,7 @@ const ContactForm = () => {
     // Form submission logic
     console.log('Form submitted with data:', formData);
 
-    // Example: send to API
+    // send to API
     fetch('/api/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -53,7 +53,7 @@ const ContactForm = () => {
       theme: "dark",
     })
 
-    // Reset form if needed
+    // Reset form
     setFormData({ Name: '', Email: '', Topic: '', Message: '' });
 
   }
@@ -61,17 +61,18 @@ const ContactForm = () => {
   return (
     <div className="w-[95%] max-w-400 mx-auto">
       <div className="bg-background">
-        <div className="flex flex-col justify-between items-center gap-14">
+        <div className="flex flex-col justify-between items-center gap-8 md:gap-14">
           {/* title */}
-          <div className="flex flex-col justify-center gap-2 text-center w-full md:w-[25%]">
+          <div className="flex flex-col justify-center gap-2 text-center w-full lg:w-[25%]">
             <h2 className="heading-2">Contact Us</h2>
             <p className="paragraph">Have a question, suggestion, or just want to say hello? Our team is ready to assist</p>
           </div>
 
-          {/* content */}
+          <div className="bg-secondary lg:p-12 rounded-lg w-full  flex justify-center">
+            {/* content */}
           <div className="w-full md:w-300 flex flex-col-reverse md:flex-row justify-center gap-5">
             {/* form field */}
-            <div className="w-full border border-border p-5 rounded-lg  flex flex-col gap-5">
+            <div className="bg-background w-full border border-border p-5 rounded-lg  flex flex-col gap-5">
 
               <div>
                 <h3 className="heading-3">Send us a message</h3>
@@ -152,13 +153,15 @@ const ContactForm = () => {
                 alt="Contact Form"
                 width={800}
                 height={600}
-                className="h-full w-full object-cover"
+                className="h-60 md:h-full w-full object-cover"
                 priority
                 quality={90}
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
           </div>
+          </div>
+
         </div>
       </div>
     </div>

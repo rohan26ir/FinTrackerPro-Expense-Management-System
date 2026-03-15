@@ -8,7 +8,7 @@ export default function page() {
     <div>
       <div className="flex flex-col justify-between gap-10">
 
-        <div className="mt-20"><ContactForm></ContactForm></div>
+        <div className="mt-10 md:mt-14 lg:mt-20"><ContactForm></ContactForm></div>
         <div></div>
         <div></div>
         <div></div>
