@@ -47,7 +47,7 @@ const WhyPeopleChoose = () => {
         <div className="flex flex-col lg:flex-row justify-between gap-8 lg:gap-20">
           
           {/* Left - Image Section - Hidden on mobile, visible on desktop */}
-          <div className="hidden lg:w-[45%] md:flex flex-col justify-between gap-5 2xl:gap-2">
+          <div className="hidden lg:w-[45%] lg:flex flex-col justify-between gap-5 2xl:gap-2">
             <div className="rounded-lg h-full 2xl:max-h-80 relative group overflow-hidden">
               <Image 
                 src={ImageWhy}

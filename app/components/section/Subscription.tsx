@@ -134,7 +134,7 @@ const Subscription = () => {
 
           {/* Tab Switcher */}
           <div className="flex flex-col items-center">
-            <div className="flex flex-row justify-center gap-2 p-1 bg-secondary/50 rounded-lg inline-flex">
+            <div className="flex flex-row justify-center gap-2 p-1 bg-secondary/50 rounded-lg  mb-8">
               <button 
                 className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
                   selectedTab === 'monthly' 
@@ -234,11 +234,11 @@ const Subscription = () => {
                       {plan.features.map((feature, index) => (
                         <li key={index} className="text-sm flex items-start gap-2">
                           {feature.included ? (
-                            <span className="flex-shrink-0 w-5 h-5 rounded-full bg-green-500/10 flex items-center justify-center mt-0.5">
+                            <span className="shrink-0 w-5 h-5 rounded-full bg-green-500/10 flex items-center justify-center mt-0.5">
                               <Check className="w-3.5 h-3.5 text-green-500" />
                             </span>
                           ) : (
-                            <span className="flex-shrink-0 w-5 h-5 rounded-full bg-red-500/10 flex items-center justify-center mt-0.5">
+                            <span className="shrink-0 w-5 h-5 rounded-full bg-red-500/10 flex items-center justify-center mt-0.5">
                               <X className="w-3.5 h-3.5 text-red-400" />
                             </span>
                           )}

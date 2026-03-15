@@ -1,4 +1,5 @@
 import HomeHero from "./components/pages/HomeHero";
+import MeetFinTracker from "./components/section/MeetFinTracker";
 import Subscription from "./components/section/Subscription";
 import Testimonials from "./components/section/Testimonials";
 import TrustedBy from "./components/section/TrustedBy";
@@ -16,6 +17,8 @@ export default function Home() {
 
       <div><TrustedBy></TrustedBy></div>
       
+      <div><MeetFinTracker></MeetFinTracker></div>
+      
       <div><Testimonials></Testimonials></div>
       
       <div><WhyPeopleChoose></WhyPeopleChoose></div>
@@ -24,7 +27,6 @@ export default function Home() {
       
       <div><WhyChooseUS></WhyChooseUS></div>
 
-      {/* <div></div> */}
 
 
     </div>
