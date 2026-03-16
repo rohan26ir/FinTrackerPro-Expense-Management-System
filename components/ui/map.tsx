@@ -1,8 +1,5 @@
 "use client"
 
-
-import type { ComponentType, ComponentProps, LazyExoticComponent } from 'react'
-
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { ButtonGroup } from "@/components/ui/button-group"
@@ -123,12 +120,6 @@ function createLazyComponent<T extends ComponentType<any>>(
             </Suspense>
         )
     }
-}
-
-
-// Helper function
-function getComponentName<T>(factory: () => Promise<{ default: T }>) {
-    return factory.toString().slice(0, 50) || 'Component'
 }
 
 const LeafletMapContainer = createLazyComponent(() =>
@@ -755,7 +746,7 @@ function MapTooltip({
             {children}
             <div
                 className={cn(
-                    "bg-foreground fill-foreground absolute z-50 size-2.5 rotate-45 rounded-[2px]",
+                    "bg-foreground fill-foreground absolute z-50 size-2.5 rotate-45 rounded-xs",
                     ARROW_POSITION_CLASSES[side]
                 )}
             />
