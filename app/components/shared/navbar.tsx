@@ -41,7 +41,7 @@ const user = {
 
 const navLinks = [
   { href: "/", label: "Home", icon: Home },
-  { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
+  // { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
   { href: "/dashboard/transactions", label: "Transactions", icon: Wallet },
   { href: "/dashboard/add-income", label: "Income", icon: TrendingUp },
   { href: "/pricing", label: "Pricing", icon: CreditCard },
@@ -106,7 +106,7 @@ export default function Navbar() {
                     key={link.href}
                     href={link.href}
                     className={cn(
-                      "px-3 py-2 text-lg font-medium rounded-md transition-colors",
+                      "px-1 lg:px-3 py-2 text-lg font-medium rounded-md transition-colors",
                       "hover:bg-accent hover:text-accent-foreground",
                       "flex items-center gap-2",
                       isActive 
@@ -132,7 +132,7 @@ export default function Navbar() {
             )}
 
             {/* Theme Toggle */}
-            <ModeToggle />
+            {/* <ModeToggle /> */}
 
             {/* User Menu (Authenticated) */}
             {isAuthenticated ? (
@@ -156,6 +156,10 @@ export default function Navbar() {
                       </p>
                     </div>
                   </DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem asChild>
+                    <ModeToggle />
+                  </DropdownMenuItem>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem asChild>
                     <Link href="/dashboard/profile" className="cursor-pointer">
@@ -230,6 +234,10 @@ export default function Navbar() {
                           </div>
                         </div>
                       </DropdownMenuLabel>
+
+                      <DropdownMenuSeparator />
+
+                        <ModeToggle />
                       <DropdownMenuSeparator />
 
                       {/* Navigation Links with Icons */}
@@ -263,6 +271,7 @@ export default function Navbar() {
                           <span>Profile</span>
                         </Link>
                       </DropdownMenuItem>
+                      
                       <DropdownMenuItem asChild>
                         <Link href="/dashboard/settings" onClick={closeMobileMenu} className="cursor-pointer">
                           <Settings className="mr-2 h-4 w-4" />

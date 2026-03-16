@@ -8,7 +8,7 @@ import ContactMap from "@/app/components/section/ContactMap";
 export default function page() {
   return (
     <div>
-      <div className="flex flex-col justify-between gap-10  my-10 md:my-14 lg:my-20">
+      <div className="flex flex-col justify-between gap-10 md:gap-20  my-10 md:my-14 lg:my-20">
 
         <div className=""><ContactForm></ContactForm></div>
 

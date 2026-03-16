@@ -183,18 +183,13 @@ const ContactMap = () => {
                                     : `${distanceKm.toFixed(1)} km away`}
                             </Button>
                         )}
-
-                        {error && (
-                            <span className="text-sm text-red-500">{error}</span>
-                        )}
                     </div>
                 </div>
             </div>
 
             {/* Map */}
             <div
-                className="rounded-sm overflow-hidden border border-gray-200"
-                style={{ height: 420 }}
+                className="rounded-sm overflow-hidden border border-gray-200 h-60 lg:h-80"
             >
                 <Map
                     center={MIRPUR_SONI_HALL}

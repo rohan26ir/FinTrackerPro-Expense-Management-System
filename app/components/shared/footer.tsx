@@ -23,10 +23,9 @@ export default function Footer() {
     { name: "Home", href: "/" },
     { name: "Features", href: "/features" },
     { name: "About", href: "/about" },
-    { name: "Contact", href: "/contact" },
-    { name: "Support", href: "/support" },
-    { name: "Privacy Policy", href: "/privacy" },
-    { name: "Terms of Service", href: "/terms" },
+    { name: "Contact", href: "/contact-us" },
+    { name: "Privacy Policy", href: "/privecy-policy" },
+    { name: "Terms of Service", href: "/terms-and-conditions" },
   ];
 
   return (

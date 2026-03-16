@@ -17,7 +17,7 @@ export default function NotFound() {
 
   return (
     <div className="min-h-[60vh] bg-background flex items-center justify-center p-4">
-      <div className="w-[95%] max-w-2xl mx-auto text-center">
+      <div className="w-[95%] max-w-400 mx-auto text-center">
         <h1 className="text-8xl font-bold text-primary mb-4">404</h1>
         <h2 className="text-3xl font-semibold mb-2">
           {formattedPageName} Page Not Found
