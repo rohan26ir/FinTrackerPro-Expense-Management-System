@@ -1,5 +1,6 @@
 import ContactForm from "@/app/components/section/ContactForm";
 import ContactGetTouch from "@/app/components/section/ContactGetTouch";
+import ContactMap from "@/app/components/section/ContactMap";
 
 
 
@@ -7,15 +8,16 @@ import ContactGetTouch from "@/app/components/section/ContactGetTouch";
 export default function page() {
   return (
     <div>
-      <div className="flex flex-col justify-between gap-10">
+      <div className="flex flex-col justify-between gap-10  my-10 md:my-14 lg:my-20">
 
-        <div className="mt-10 md:mt-14 lg:mt-20"><ContactForm></ContactForm></div>
+        <div className=""><ContactForm></ContactForm></div>
 
-        <div><ContactGetTouch></ContactGetTouch></div>
+        <div><ContactMap></ContactMap></div>
         
-        <div></div>
-        <div></div>
-        <div></div>
+        <div><ContactGetTouch></ContactGetTouch></div>
+
+        {/* <div></div> */}
+        {/* <div></div> */}
 
       </div>
     </div>
