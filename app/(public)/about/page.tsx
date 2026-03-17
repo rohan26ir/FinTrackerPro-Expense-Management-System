@@ -1,4 +1,5 @@
 import AboutHero from "@/app/components/section/AboutHero";
+import AboutWeHelp from "@/app/components/section/AboutWeHelp";
 
 
 
@@ -10,7 +11,9 @@ export default function page() {
 
 
         <div><AboutHero></AboutHero></div>
-        {/* <div></div> */}
+
+        <div><AboutWeHelp></AboutWeHelp></div>
+        
         {/* <div></div> */}
 
       </div>
