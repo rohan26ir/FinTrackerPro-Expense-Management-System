@@ -88,7 +88,7 @@ export default function Navbar() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo and Brand */}
           <div className="flex items-center gap-2">
-            <Link href={isAuthenticated ? "/dashboard" : "/"} className="flex items-center space-x-2">
+            <Link href={isAuthenticated ? "/" : "/"} className="flex items-center space-x-2">
               <span className="font-bold text-xl">
                 DailyFinTracker <span className="text-primary text-[10px] align-super">Pro</span>
               </span>
@@ -149,12 +149,14 @@ export default function Navbar() {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-56" align="end" forceMount>
                   <DropdownMenuLabel className="font-normal">
-                    <div className="flex flex-col space-y-1">
+                    <Link href='/dashboard' >
+                     <div className="flex flex-col space-y-1">
                       <p className="text-sm font-medium leading-none">{user.name}</p>
                       <p className="text-xs leading-none text-muted-foreground">
                         {user.email}
                       </p>
                     </div>
+                    </Link>
                   </DropdownMenuLabel>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem asChild>

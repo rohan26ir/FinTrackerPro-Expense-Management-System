@@ -1,59 +1,26 @@
+// app/layout.tsx
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "./components/shared/navbar";
-import Footer from "./components/shared/footer";
 import { ThemeProvider } from "./components/theme-provider";
 import { ToastContainer } from "react-toastify";
 
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
+const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "DailyfinTracker – Smart Daily Expense & Income Management System",
-  description: "Track your income, monitor spending, and manage your financial life with powerful insights and analytics.",
+  description: "Track your income, monitor spending, and manage your financial life.",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased  `}
-      >
-
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange >
-
-          <header>
-            <Navbar></Navbar>
-          </header>
-
-          <main className="">
-            {children}
-          </main>
-
-          <footer>
-            <Footer></Footer>
-          </footer>
-
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          {children}
         </ThemeProvider>
         <ToastContainer />
-
       </body>
     </html>
   );

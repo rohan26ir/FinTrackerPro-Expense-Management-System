@@ -1,10 +1,11 @@
-import HomeHero from "./components/pages/HomeHero";
-import MeetFinTracker from "./components/section/MeetFinTracker";
-import Subscription from "./components/section/Subscription";
-import Testimonials from "./components/section/Testimonials";
-import TrustedBy from "./components/section/TrustedBy";
-import WhyChooseUS from "./components/section/WhyChooseUS";
-import WhyPeopleChoose from "./components/section/WhyPeopleChoose";
+import HomeHero from "../components/pages/HomeHero";
+import MeetFinTracker from "../components/section/MeetFinTracker";
+import Subscription from "../components/section/Subscription";
+import Testimonials from "../components/section/Testimonials";
+import TrustedBy from "../components/section/TrustedBy";
+import WhyChooseUS from "../components/section/WhyChooseUS";
+import WhyPeopleChoose from "../components/section/WhyPeopleChoose";
+
 
 
 

@@ -4,9 +4,9 @@
 
 export default function page() {
   return (
-    <div>
+    <div className="w-[95%] max-w-400 mx-auto my-20">
       <div>
-        div
+        
         <h1>Dashboard</h1>
       </div>
     </div>
