@@ -18,7 +18,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          {children}
+          <div className="mb-20 md:mb-2 lg:mb-0">
+            {children}
+          </div>
         </ThemeProvider>
         <ToastContainer />
       </body>

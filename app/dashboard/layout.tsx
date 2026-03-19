@@ -63,8 +63,10 @@ export default function Layout({
   children: React.ReactNode;
 }) {
   return (
-    <DashLayout navLinks={navLinks} bottomLinks={bottomLinks} brandName="DailyFinTracker">
+    <div>
+      <DashLayout navLinks={navLinks} bottomLinks={bottomLinks} brandName="DailyFinTracker">
       {children}
     </DashLayout>
+    </div>
   );
 }

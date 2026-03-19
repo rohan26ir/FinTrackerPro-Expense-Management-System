@@ -352,7 +352,7 @@ const DashLayout = ({
         allLinks={allLinks}
       />
 
-      <div className="flex min-h-screen bg-background">
+      <div className="flex min-h-screen bg-background ">
         {/* ── Sidebar ── */}
         <aside className="hidden lg:flex flex-col w-60 shrink-0 border-r border-border bg-sidebar fixed top-0 left-0 h-full z-30">
           {/* Brand */}
