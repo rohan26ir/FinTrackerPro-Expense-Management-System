@@ -2,12 +2,43 @@
 
 import { useState, useRef, useEffect } from "react";
 import {
-  DollarSign, Tag, Calendar, FileText, ArrowRight,
-  CheckCircle2, X, Plus, Repeat2, Trash2, Sparkles,
-  TrendingUp, Wallet, Clock, Layers, BadgePlus,
-  ChevronDown, AlertCircle, Edit3, Briefcase, Laptop,
-  TrendingUp as TrendingUpIcon, Building2, Home, Gift,
-  RefreshCcw, Package, PlusCircle
+  Receipt,
+  Tag,
+  Calendar,
+  FileText,
+  CheckCircle2,
+  X,
+  Sparkles,
+  Wallet,
+  BadgePlus,
+  ChevronDown,
+  AlertCircle,
+  Utensils,
+  Bus,
+  ShoppingBag,
+  HeartPulse,
+  Tv,
+  Zap,
+  BookOpen,
+  Package,
+  PlusCircle,
+  Check,
+  ArrowRight,
+  DollarSign,
+  Clock,
+  Repeat2,
+  Upload,
+  FileImage,
+  Layers,
+  Edit3,
+  TrendingUp,
+  Briefcase,
+  Laptop,
+  Building2,
+  Home,
+  Gift,
+  RefreshCcw,
+  Plus,
 } from "lucide-react";
 
 // ─── Toast ────────────────────────────────────────────────────────────────────
@@ -19,14 +50,14 @@ const Toast = ({ message, type = "success", onClose }: { message: string; type?:
 
   const bgColor = type === "success" ? "bg-background border-emerald-200" : "bg-rose-50 border-rose-200";
   const textColor = type === "success" ? "text-foreground" : "text-rose-900";
-  const iconColor = type === "success" ? "text-primery" : "text-rose-500";
+  const iconColor = type === "success" ? "text-button" : "text-rose-500";
 
   return (
     <div
       className={`fixed bottom-6 right-6 z-50 flex items-center gap-3 px-5 py-4 rounded-xl shadow-xl border border-border ${bgColor} backdrop-blur-sm`}
       style={{ minWidth: 280, animation: "slideIn 0.25s ease" }}
     >
-      <div className={`p-1 rounded-full ${type === "success" ? "bg-secondery" : "bg-rose-100"}`}>
+      <div className={`p-1 rounded-full ${type === "success" ? "bg-button/20" : "bg-rose-100"}`}>
         {type === "success" ? <CheckCircle2 size={18} className={iconColor} /> : <AlertCircle size={18} className={iconColor} />}
       </div>
       <span className={`text-sm font-medium flex-1 ${textColor}`}>{message}</span>
@@ -43,39 +74,39 @@ const Toast = ({ message, type = "success", onClose }: { message: string; type?:
   );
 };
 
-// ─── Constants ────────────────────────────────────────────────────────────────
+// ─── Constants ─────────────────────────────────────────────────────────────────
 const DEFAULT_CATEGORIES = [
-  { id: "1", name: "Salary", icon: "Briefcase", color: "#818CF8" },
-  { id: "2", name: "Freelance", icon: "Laptop", color: "#F472B6" },
-  { id: "3", name: "Investment", icon: "TrendingUp", color: "#4ADE80" },
-  { id: "4", name: "Business", icon: "Building2", color: "#FBBF24" },
-  { id: "5", name: "Rental", icon: "Home", color: "#60A5FA" },
-  { id: "6", name: "Gift", icon: "Gift", color: "#C084FC" },
-  { id: "7", name: "Refund", icon: "RefreshCcw", color: "#F87171" },
-  { id: "8", name: "Other", icon: "Package", color: "#9CA3AF" },
+  { id: "1", name: "Food",          icon: "Utensils",    color: "#FF6B6B" },
+  { id: "2", name: "Transport",     icon: "Bus",         color: "#4ECDC4" },
+  { id: "3", name: "Shopping",      icon: "ShoppingBag", color: "#FFE66D" },
+  { id: "4", name: "Health",        icon: "HeartPulse",  color: "#A8E6CF" },
+  { id: "5", name: "Entertainment", icon: "Tv",          color: "#C3A6FF" },
+  { id: "6", name: "Utilities",     icon: "Zap",         color: "#FFB347" },
+  { id: "7", name: "Education",     icon: "BookOpen",    color: "#87CEEB" },
+  { id: "8", name: "Other",         icon: "Package",     color: "#9CA3AF" },
 ];
 
 const ICON_OPTIONS = [
-  { name: "Briefcase", component: Briefcase },
-  { name: "Laptop", component: Laptop },
-  { name: "TrendingUp", component: TrendingUpIcon },
-  { name: "Building2", component: Building2 },
-  { name: "Home", component: Home },
-  { name: "Gift", component: Gift },
-  { name: "RefreshCcw", component: RefreshCcw },
-  { name: "Package", component: Package },
-  { name: "DollarSign", component: DollarSign },
-  { name: "Calendar", component: Calendar },
-  { name: "Clock", component: Clock },
-  { name: "Wallet", component: Wallet },
+  { name: "Utensils",    component: Utensils    },
+  { name: "Bus",         component: Bus         },
+  { name: "ShoppingBag", component: ShoppingBag },
+  { name: "HeartPulse",  component: HeartPulse  },
+  { name: "Tv",          component: Tv          },
+  { name: "Zap",         component: Zap         },
+  { name: "BookOpen",    component: BookOpen    },
+  { name: "Package",     component: Package     },
+  { name: "DollarSign",  component: DollarSign  },
+  { name: "Calendar",    component: Calendar    },
+  { name: "Clock",       component: Clock       },
+  { name: "Wallet",      component: Wallet      },
 ];
 
 const RECURRENCE_OPTIONS = [
-  { value: "None", label: "One time" },
-  { value: "Daily", label: "Every day" },
-  { value: "Weekly", label: "Every week" },
+  { value: "None",    label: "One time"    },
+  { value: "Daily",   label: "Every day"   },
+  { value: "Weekly",  label: "Every week"  },
   { value: "Monthly", label: "Every month" },
-  { value: "Yearly", label: "Every year" },
+  { value: "Yearly",  label: "Every year"  },
 ];
 
 const CURRENCIES = [
@@ -86,47 +117,60 @@ const CURRENCIES = [
   { code: "JPY", symbol: "¥", name: "Japanese Yen" },
 ];
 
+const ACCOUNTS = [
+  { id: "cash",   label: "Cash",   icon: "💵" },
+  { id: "bank",   label: "Bank",   icon: "🏦" },
+  { id: "card",   label: "Card",   icon: "💳" },
+  { id: "wallet", label: "Wallet", icon: "📱" },
+];
+
 const today = () => new Date().toISOString().split("T")[0];
 
-// Icon renderer component
+// ─── Icon Renderer ──────────────────────────────────────────────────────────────
 const IconRenderer = ({ iconName, size = 16, className = "" }: { iconName: string; size?: number; className?: string }) => {
   const iconMap: { [key: string]: any } = {
-    Briefcase, Laptop, TrendingUp: TrendingUpIcon, Building2, Home, Gift,
-    RefreshCcw, Package, DollarSign, Calendar, Clock, Wallet, X, Plus
+    Utensils, Bus, ShoppingBag, HeartPulse, Tv, Zap, BookOpen, Package,
+    DollarSign, Calendar, Clock, Wallet, X, Plus, Briefcase, Laptop,
+    TrendingUp, Building2, Home, Gift, RefreshCcw
   };
 
   const IconComponent = iconMap[iconName];
   return IconComponent ? <IconComponent size={size} className={className} /> : null;
 };
 
-// ─── Component ────────────────────────────────────────────────────────────────
-const DboardIncomeAdd = () => {
+// ─── Main Component ─────────────────────────────────────────────────────────────
+const DboardExpenseAdd = () => {
   const [form, setForm] = useState({
-    amount: "",
-    currency: "BDT",
-    category: "",
-    date: today(),
+    amount:     "",
+    currency:   "BDT",
+    category:   "",
+    account:    "",
+    date:       today(),
     recurrence: "None",
-    note: "",
-    tags: [] as string[],
+    note:       "",
+    tags:       [] as string[],
   });
 
-  const [categories, setCategories] = useState(DEFAULT_CATEGORIES);
-  const [categoryOpen, setCategoryOpen] = useState(false);
-  const [newCatInput, setNewCatInput] = useState({ name: "", icon: "Briefcase", color: "#98E667" });
-  const [focused, setFocused] = useState<string | null>(null);
-  const [tagInput, setTagInput] = useState("");
-  const [toast, setToast] = useState<{ message: string; type: "success" | "error" } | null>(null);
-  const [submitting, setSubmitting] = useState(false);
   const [activeTab, setActiveTab] = useState<"basic" | "advanced">("basic");
+  const [categories, setCategories]                     = useState(DEFAULT_CATEGORIES);
+  const [categoryOpen, setCategoryOpen]                 = useState(false);
+  const [newCatInput, setNewCatInput]   = useState({ name: "", icon: "Utensils", color: "#98E667" });
+  const [tagInput, setTagInput]   = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted]   = useState(false);
+  const [toast, setToast] = useState<{ message: string; type: "success" | "error" } | null>(null);
+  const [focused, setFocused] = useState<string | null>(null);
 
   const categoryRef = useRef<HTMLDivElement>(null);
+  const currencyRef = useRef<HTMLDivElement>(null);
 
-  // Close dropdown on outside click
   useEffect(() => {
     const handler = (e: MouseEvent) => {
       if (categoryRef.current && !categoryRef.current.contains(e.target as Node)) {
         setCategoryOpen(false);
+      }
+      if (currencyRef.current && !currencyRef.current.contains(e.target as Node)) {
+        // Keep currency dropdown logic if needed
       }
     };
     document.addEventListener("mousedown", handler);
@@ -136,7 +180,17 @@ const DboardIncomeAdd = () => {
   const set = (field: string, value: unknown) =>
     setForm((p) => ({ ...p, [field]: value }));
 
-  // Add custom category
+  const activeCat = categories.find((c) => c.name === form.category);
+
+  const addTag = () => {
+    const trimmed = tagInput.trim().toLowerCase().replace(/\s+/g, "-");
+    if (!trimmed || form.tags.includes(trimmed) || form.tags.length >= 5) return;
+    set("tags", [...form.tags, trimmed]);
+    setTagInput("");
+  };
+
+  const removeTag = (t: string) => set("tags", form.tags.filter((x) => x !== t));
+
   const addCustomCategory = () => {
     const trimmed = newCatInput.name.trim();
     if (!trimmed || categories.some(c => c.name === trimmed)) return;
@@ -150,7 +204,7 @@ const DboardIncomeAdd = () => {
 
     setCategories((p) => [...p, newCategory]);
     set("category", trimmed);
-    setNewCatInput({ name: "", icon: "Briefcase", color: "#98E667" });
+    setNewCatInput({ name: "", icon: "Utensils", color: "#98E667" });
     setCategoryOpen(false);
 
     setToast({ message: "Category added successfully! 🎉", type: "success" });
@@ -163,40 +217,19 @@ const DboardIncomeAdd = () => {
     if (form.category === catName) set("category", "");
   };
 
-  // Tags
-  const addTag = () => {
-    const trimmed = tagInput.trim().toLowerCase().replace(/\s+/g, "-");
-    if (!trimmed || form.tags.includes(trimmed) || form.tags.length >= 5) return;
-    set("tags", [...form.tags, trimmed]);
-    setTagInput("");
-  };
-  const removeTag = (t: string) => set("tags", form.tags.filter((x) => x !== t));
-
-  // Submit
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!form.amount || !form.category) return;
     setSubmitting(true);
-
-    await new Promise(resolve => setTimeout(resolve, 1000));
-
-    const payload = {
-      ...form,
-      amount: parseFloat(form.amount),
-      submittedAt: new Date().toISOString(),
-      categoryDetails: categories.find(c => c.name === form.category),
-    };
-
-    console.log("Income Submitted:", payload);
-    setToast({ message: "Income added successfully! 🎉", type: "success" });
-
-    setForm({
-      amount: "", currency: "USD", category: "", date: today(),
-      recurrence: "None", note: "", tags: [],
-    });
+    await new Promise((r) => setTimeout(r, 900));
     setSubmitting(false);
+    setSubmitted(true);
+    setToast({ message: "Expense added successfully! 🎉", type: "success" });
+    setTimeout(() => setSubmitted(false), 2500);
+    setForm({ amount: "", currency: "BDT", category: "", account: "", date: today(), recurrence: "None", note: "", tags: [] });
   };
 
-  const isValid = form.amount.trim() && parseFloat(form.amount) > 0 && form.category && form.date;
+  const isValid = form.amount && parseFloat(form.amount) > 0 && form.category && form.date;
 
   const selectedCurrency = CURRENCIES.find(c => c.code === form.currency);
 
@@ -204,20 +237,20 @@ const DboardIncomeAdd = () => {
     <>
       {toast && <Toast message={toast.message} type={toast.type} onClose={() => setToast(null)} />}
 
-      <div className=" bg-background">
+      <div className="bg-background">
         <div className="w-full max-w-400 mx-auto px-4 sm:px-6 lg:px-8 py-6">
 
           {/* Header */}
-          <div className="mb-6 ">
+          <div className="mb-6">
             <div className="flex items-center gap-2 mb-1">
               <div className="p-2 rounded-xl bg-button/10">
                 <Wallet size={20} className="text-foreground" />
               </div>
-              <h1 className="heading-3 text-foreground">Add Income</h1>
+              <h1 className="heading-3 text-foreground">Add Expense</h1>
             </div>
             <p className="paragraph-small text-muted-foreground flex items-center gap-1">
               <Sparkles size={14} className="text-foreground" />
-              Record a new income entry
+              Record a new expense entry
             </p>
           </div>
 
@@ -246,15 +279,15 @@ const DboardIncomeAdd = () => {
           </div>
 
           {/* Main Card */}
-          <div className="relative ">
+          <div className="relative">
             <div className="relative bg-card border border-border rounded-xl shadow-sm overflow-hidden">
 
               {/* Card header */}
               <div className="px-6 py-3 border-b border-border bg-muted/30">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-1.5">
-                    <TrendingUp size={14} className="text-foreground" />
-                    <span className="caption font-medium text-muted-foreground">New transaction • Income</span>
+                    <Receipt size={14} className="text-foreground" />
+                    <span className="caption font-medium text-muted-foreground">New transaction • Expense</span>
                   </div>
                   <span className="caption text-muted-foreground bg-secondary px-2 py-1 rounded-full">
                     {today()}
@@ -308,21 +341,21 @@ const DboardIncomeAdd = () => {
                     </div>
                   </div>
 
-                  {/* Category selector - Cute & Compact */}
+                  {/* Category selector */}
                   <div ref={categoryRef}>
                     <label className="flex items-center gap-1 caption font-semibold text-muted-foreground mb-1.5">
                       <Tag size={12} /> Category <span className="text-destructive">*</span>
                     </label>
 
-                    {/* Category selector - Show ALL categories */}
+                    {/* Category grid - Show all categories */}
                     <div className="grid grid-cols-4 gap-1.5 max-h-64 overflow-y-auto p-1">
-                      {categories.map((cat) => (  // Remove slice(0, 7) to show all categories
+                      {categories.map((cat) => (
                         <div key={cat.id} className="relative">
                           <button
                             type="button"
                             onClick={() => { set("category", cat.name); setCategoryOpen(false); }}
                             className={`relative w-full p-2 rounded-lg border transition-all duration-200
-          ${form.category === cat.name
+                              ${form.category === cat.name
                                 ? 'border-button bg-button/10'
                                 : 'border-border hover:border-button/50 hover:bg-secondary'}`}
                           >
@@ -344,22 +377,22 @@ const DboardIncomeAdd = () => {
                         </div>
                       ))}
 
-                      {/* Add custom button - always at the end */}
+                      {/* Add custom button */}
                       <button
                         type="button"
                         onClick={() => setCategoryOpen(true)}
                         className="p-2 rounded-lg border border-dashed border-border 
-             hover:border-button hover:bg-secondary transition-all duration-200
-             flex flex-col items-center gap-1"
+                           hover:border-button hover:bg-secondary transition-all duration-200
+                           flex flex-col items-center gap-1"
                       >
                         <BadgePlus size={16} className="text-muted-foreground" />
                         <span className="text-[10px] font-medium text-muted-foreground">Custom</span>
                       </button>
                     </div>
 
-                    {/* Custom category dropdown - Compact & Cute */}
+                    {/* Custom category dropdown */}
                     {categoryOpen && (
-                      <div className="absolute z-30 -mt-24 w-full md:w-80 bg-card border border-border rounded-xl shadow-lg p-3 right-0 ">
+                      <div className="absolute z-30 -mt-24 w-full md:w-80 bg-card border border-border rounded-xl shadow-lg p-3 right-0">
                         <h4 className="text-xs font-semibold text-foreground mb-2">Create custom category</h4>
 
                         <div className="space-y-3">
@@ -368,7 +401,7 @@ const DboardIncomeAdd = () => {
                             <label className="block text-[10px] font-medium text-muted-foreground mb-1">Name</label>
                             <input
                               type="text"
-                              placeholder="e.g., Bonus, Dividend..."
+                              placeholder="e.g., Groceries, Rent..."
                               value={newCatInput.name}
                               onChange={(e) => setNewCatInput(p => ({ ...p, name: e.target.value }))}
                               className="w-full px-3 py-2 bg-secondary border border-border rounded-lg 
@@ -379,7 +412,7 @@ const DboardIncomeAdd = () => {
                             />
                           </div>
 
-                          {/* Icon selector - Compact grid */}
+                          {/* Icon selector */}
                           <div>
                             <label className="block text-[10px] font-medium text-muted-foreground mb-1">Icon</label>
                             <div className="grid grid-cols-6 gap-1">
@@ -399,7 +432,7 @@ const DboardIncomeAdd = () => {
                             </div>
                           </div>
 
-                          {/* Color picker - Compact */}
+                          {/* Color picker */}
                           <div>
                             <label className="block text-[10px] font-medium text-muted-foreground mb-1">Color</label>
                             <input
@@ -437,6 +470,40 @@ const DboardIncomeAdd = () => {
                     )}
                   </div>
 
+                  {/* Account selector */}
+                  <div>
+                    <label className="flex items-center gap-1 caption font-semibold text-muted-foreground mb-1.5">
+                      <Wallet size={12} /> Account
+                    </label>
+                    <div className="grid grid-cols-4 gap-1.5">
+                      {ACCOUNTS.map((acc) => (
+                        <button
+                          key={acc.id}
+                          type="button"
+                          onClick={() => set("account", acc.id === form.account ? "" : acc.id)}
+                          className={`relative p-2 rounded-lg border transition-all duration-200
+                            ${form.account === acc.id
+                              ? 'border-button bg-button/10'
+                              : 'border-border hover:border-button/50 hover:bg-secondary'}`}
+                        >
+                          <div className="flex flex-col items-center gap-1">
+                            <div className="p-1.5 rounded-md bg-secondary">
+                              <span className="text-base leading-none">{acc.icon}</span>
+                            </div>
+                            <span className={`text-[10px] font-medium ${form.account === acc.id ? 'text-button' : 'text-muted-foreground'}`}>
+                              {acc.label}
+                            </span>
+                          </div>
+                          {form.account === acc.id && (
+                            <div className="absolute -top-1 -right-1 w-3.5 h-3.5 bg-button rounded-full flex items-center justify-center">
+                              <CheckCircle2 size={8} className="text-white" />
+                            </div>
+                          )}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
                   {/* Date and recurrence */}
                   <div className="grid grid-cols-2 gap-3">
                     <div>
@@ -461,7 +528,7 @@ const DboardIncomeAdd = () => {
 
                     <div>
                       <label className="flex items-center gap-1 caption font-semibold text-muted-foreground mb-1.5">
-                        <RefreshCcw size={12} /> Recurrence
+                        <Repeat2 size={12} /> Recurrence
                       </label>
                       <div className="relative">
                         <Clock size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
@@ -551,6 +618,29 @@ const DboardIncomeAdd = () => {
                       </div>
                     </div>
                   </div>
+
+                  {/* Receipt Upload */}
+                  <div>
+                    <label className="flex items-center gap-1 caption font-semibold text-muted-foreground mb-1.5">
+                      <FileImage size={12} /> Receipt
+                    </label>
+                    <label
+                      className="flex flex-col items-center justify-center gap-2 p-4 rounded-lg border-2 border-dashed cursor-pointer transition-all duration-200
+                               hover:border-button hover:bg-button/5"
+                      style={{
+                        borderColor: "var(--border)",
+                      }}
+                    >
+                      <input type="file" className="hidden" accept="image/*,.pdf" />
+                      <div className="p-2 rounded-lg bg-button/10">
+                        <Upload className="size-5 text-button" />
+                      </div>
+                      <div className="text-center">
+                        <p className="text-xs font-semibold text-foreground">Drop receipt here</p>
+                        <p className="text-[10px] text-muted-foreground mt-0.5">PNG, JPG or PDF · Max 10MB</p>
+                      </div>
+                    </label>
+                  </div>
                 </div>
 
                 {/* Required fields hint */}
@@ -563,10 +653,7 @@ const DboardIncomeAdd = () => {
                 <div className="mt-5 flex items-center justify-between gap-3 pt-4 border-t border-border">
                   <button
                     type="button"
-                    onClick={() => setForm({
-                      amount: "", currency: "USD", category: "", date: today(),
-                      recurrence: "None", note: "", tags: [],
-                    })}
+                    onClick={() => setForm({ amount: "", currency: "BDT", category: "", account: "", date: today(), recurrence: "None", note: "", tags: [] })}
                     className="px-4 py-2 text-xs font-medium text-muted-foreground rounded-lg
                              hover:bg-secondary hover:text-foreground 
                              transition-all duration-200 flex items-center gap-1"
@@ -588,9 +675,14 @@ const DboardIncomeAdd = () => {
                         <div className="w-3.5 h-3.5 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" />
                         <span>Processing...</span>
                       </>
+                    ) : submitted ? (
+                      <>
+                        <CheckCircle2 size={12} />
+                        <span>Saved!</span>
+                      </>
                     ) : (
                       <>
-                        <span>Add Income</span>
+                        <span>Add Expense</span>
                         <ArrowRight size={12} className="group-hover:translate-x-0.5 transition-transform" />
                       </>
                     )}
@@ -605,4 +697,4 @@ const DboardIncomeAdd = () => {
   );
 };
 
-export default DboardIncomeAdd;
+export default DboardExpenseAdd;

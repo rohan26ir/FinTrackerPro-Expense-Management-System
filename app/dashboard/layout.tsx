@@ -51,8 +51,8 @@ const bottomLinks = [
   { href: "/dashboard/profile", label: "Profile", icon: User },
   { href: "/dashboard/settings", label: "Settings", icon: Settings },
   { href: "/dashboard/notifications", label: "Notifications", icon: Bell },
-  { href: "/dashboard/security", label: "Security", icon: Shield },
-  { href: "/dashboard/preferences", label: "Preferences", icon: Globe },
+  // { href: "/dashboard/security", label: "Security", icon: Shield },
+  // { href: "/dashboard/preferences", label: "Preferences", icon: Globe },
   { href: "/dashboard/help", label: "Help & Support", icon: HelpCircle },
   // { href: "/contact-us", label: "Contact Us", icon: Phone },
 ];
